@@ -3,26 +3,27 @@
 <div class="container">
     <div class="login-div">
         <mat-card>
-            <h1>Login</h1>
+            <h1>{{title}}</h1>
             <form id="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
                 <mat-form-field appearance="fill">
-                    <mat-label>Username</mat-label>
-                    <input matInput type="text" placeholder="Ex: myusername" formControlName="username" name="username" required>
-                    <mat-error *ngIf="loginForm.invalid">Email is required</mat-error>
+                    <mat-label>{{userTitle}}</mat-label>
+                    <input matInput type="text" placeholder="Ex: myusername" formControlName="username" name="username"
+                        required>
+                    <mat-error *ngIf="loginForm.invalid">{{userError}}</mat-error>
                 </mat-form-field>
 
                 <br>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Password</mat-label>
+                    <mat-label>{{passwordTitle}}</mat-label>
                     <input matInput type="password" formControlName="password" name="password" required>
-                    <mat-error *ngIf="loginForm.invalid">Password is required</mat-error>
+                    <mat-error *ngIf="loginForm.invalid">{{passwordError}}</mat-error>
                 </mat-form-field>
 
                 <br>
 
                 <button mat-raised-button aria-label="Login Button" type="submit">
-                    Login
+                    {{loginButton}}
                 </button>
             </form>
         </mat-card>

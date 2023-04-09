@@ -10,6 +10,15 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  // HTML Info
+  public title: string = 'Login';
+  public userTitle: string = 'Username';
+  public userError: string = 'Username is required';
+  public passwordTitle: string = 'Password';
+  public passwordError: string = 'Password is required';
+  public loginButton: string = 'Login';
+  // HTML Info
+  
   public username: string = '';
 
   public loginForm: FormGroup = this.fb.group({

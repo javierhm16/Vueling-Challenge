@@ -1,0 +1,10 @@
+<mat-toolbar>
+    <img src="https://cdn.worldvectorlogo.com/logos/logo-vueling.svg" alt="Vueling Logo" width="120px">
+
+    <div class="login-data" *ngIf="logoutB">
+        <span>{{username}}</span>
+        <button mat-raised-button color="primary" aria-label="Logout Button" (click)="logout()">
+            Logout
+        </button>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,35 @@
+@import "/src/styles.scss";
+
+.container {
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin-bottom: 10px;
+        background-color: $color-primary-a;
+        transition: 0.5s all;
+        margin-right: auto;
+    }
+
+    button:hover {
+        background-color: $color-primary-c;
+    }
+}
+
+img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+p {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}

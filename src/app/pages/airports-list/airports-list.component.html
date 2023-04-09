@@ -1,0 +1,25 @@
+<div *ngIf="!airportsList && !error">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="container slide-right" *ngIf="airportsList">
+    <div class="aiports-list">
+        <h1>{{title}}</h1>
+        <div class="airports-list-containers">
+            <mat-card class="example-card" *ngFor="let airport of airportsList" (click)="clickAirport(airport.key)">
+                <mat-card-header>
+                    <mat-card-title>{{airport.name}}</mat-card-title>
+                    <mat-card-subtitle>{{airport.key}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p><strong>City:</strong> {{airport.city}}</p>
+                    <p><strong>Country:</strong> {{airport.country}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <mat-card class="error-card" *ngIf="error">
+        {{ error }}
+    </mat-card>
+</div>

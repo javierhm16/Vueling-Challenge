@@ -1,0 +1,24 @@
+@import '/src/styles.scss';
+
+button {
+    background-color: $color-primary-a;
+}
+
+.login-div {
+    margin: 0 auto;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    // background-color: $gray-75;
+    text-align: center;
+}
+
+mat-form-field {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .login-div {
+        width: 100%;
+    }
+}

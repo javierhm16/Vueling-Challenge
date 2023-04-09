@@ -1,0 +1,46 @@
+@import "/src/styles.scss";
+
+.header {
+  background: $gray-75;
+  color: $color-white;
+  padding: 20px;
+}
+
+.aiports-list {
+  margin: 10px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.airports-list-containers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.example-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+  .mat-card-content {
+    margin-left: 15px;
+  }
+
+  transition: 0.3s all;
+}
+
+.example-card:hover {
+  box-shadow: 5px 5px 10px 0px $gray-45;
+}
+
+.error-card {
+  color: $color-red;
+  text-align: center;
+}

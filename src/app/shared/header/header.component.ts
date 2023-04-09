@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     this.username = this.userSvc.getUsername();
   }
 
-  logout() {
+  logout(): void {
     this.userSvc.logout();
   }
 

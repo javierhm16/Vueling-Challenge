@@ -8,31 +8,31 @@ export class UserService {
 
   constructor(private router: Router) { }
 
-  public saveSecurityKey(securityKey: string) {
+  public saveSecurityKey(securityKey: string): void {
     localStorage.setItem('securityKey', securityKey);
   }
 
-  public saveUsername(username: string) {
+  public saveUsername(username: string): void {
     localStorage.setItem('username', username);
   }
 
-  public login(username: string) {
+  public login(username: string): void {
     const securityKey = '1234567890';
     this.saveSecurityKey(securityKey);
     this.saveUsername(username);
   }
 
-  public getUsername() {
+  public getUsername(): string {
     return localStorage.getItem('username');
   }
 
-  public logout() {
+  public logout(): void {
     localStorage.removeItem('securityKey');
     localStorage.removeItem('username');
     this.router.navigateByUrl('/login');
   }
 
-  public validateSecurityKey() {
+  public validateSecurityKey(): boolean {
     const securityKey = localStorage.getItem('securityKey');
     if (securityKey) {
       return true;

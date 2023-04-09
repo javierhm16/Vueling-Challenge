@@ -2,6 +2,10 @@
 
 La aplicación muestra un listado de aeropuertos internacionales.
 
+## Installation
+<code>npm install</code>
+<code>npm run all</code>
+
 ## Stubby configuration
 
 The information is consumed from a Stubby server (node server) within the application.

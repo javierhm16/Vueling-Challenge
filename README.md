@@ -3,8 +3,8 @@
 La aplicación muestra un listado de aeropuertos internacionales.
 
 ## Installation
-<code>npm install</code>
-<code>npm run all</code>
+`npm install`
+`npm run all`
 
 ## Stubby configuration
 

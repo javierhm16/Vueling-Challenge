@@ -22,17 +22,20 @@ export class AirportsListComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this.getAllAirports();
+    }
+
+    public async clickAirport(key: string): Promise<void> {
+        this.airport = await this.airportsListService.getAirport(key);
+        this.store.dispatch(new AddAirport(this.airport));
+        this.router.navigateByUrl('airport');
+    }
+
+    public getAllAirports(): void {
         this.airportsListService.getAllAirports().then((res) => {
             this.airportsList = res;
         }).catch((error) => {
             this.error = error.message;
         });
     }
-
-    public async clickAirport(key: string): Promise<void> {
-        this.airport = await this.airportsListService.getAirport(key);
-        this.store.dispatch(new AddAirport(this.airport));
-        this.router.navigate(['/airport']);
-    }
-
 }

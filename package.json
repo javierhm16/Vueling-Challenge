@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "stubs": "stubby -s 1500 -l 127.0.0.1 -d stubbs/stubby.json -w",
-    "startAll": "npm run stubs && npm run start",
     "all": "concurrently \"npm run stubs\" \"npm run start\""
   },
   "private": true,

@@ -11,23 +11,11 @@ export class AuthGuard implements CanActivate, CanLoad {
   constructor(private userSvc: UserService, private router: Router) { }
 
   canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    if (!this.userSvc.validateSecurityKey()) {
-      return true;
-    } else {
-      this.router.navigateByUrl('/login');
-      return false;
-    }
+    return this.userSvc.validateSecurityKey() ? true : (this.router.navigateByUrl('login'), false);
   }
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot) {
-    if (this.userSvc.validateSecurityKey()) {
-      return true;
-    } else {
-      this.router.navigateByUrl('/login');
-      return false;
-    }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.userSvc.validateSecurityKey() ? true : (this.router.navigateByUrl('login'), false);
   }
 
 }

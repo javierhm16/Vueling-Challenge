@@ -6,7 +6,7 @@
   padding: 20px;
 }
 
-.aiports-list {
+.airports-list {
   margin: 10px;
 
   h1 {
@@ -37,7 +37,13 @@
 }
 
 .example-card:hover {
+  background-color: $gray-60;
+  color: $color-white;
   box-shadow: 5px 5px 10px 0px $gray-45;
+
+  mat-card-subtitle {
+    color: $color-white;
+  }
 }
 
 .error-card {

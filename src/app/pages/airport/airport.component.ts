@@ -12,14 +12,23 @@ export class AirportComponent implements OnInit {
 
   public airport: Airport;
 
-  constructor(private store: Store, private router: Router) {
-    this.airport = store.selectSnapshot(state => state.airport.listAirport);
-    if(!this.airport) {
-      this.router.navigate(['']);
+  constructor(private store: Store, private router: Router) { }
+
+  ngOnInit(): void {
+    this.getAirport();
+    this.goBack();
+  }
+
+  public getAirport(): void {
+    this.airport = this.store.selectSnapshot(state => state.airport.listAirport);
+  }
+
+  public goBack(): void {
+    if (!this.airport) {
+      this.router.navigateByUrl('airportsList');
     }
   }
 
-  ngOnInit(): void {
-  }
+
 
 }

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   public passwordError: string = 'Password is required';
   public loginButton: string = 'Login';
   // HTML Info
-  
+
   public username: string = '';
 
   public loginForm: FormGroup = this.fb.group({
@@ -29,17 +29,21 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private userSvc: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    if(this.userSvc.validateSecurityKey()) {
-      this.router.navigateByUrl('/');
-    }
+    this.validateSession();
   }
 
   public login(): void {
-    if(this.loginForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
     this.userSvc.login(this.loginForm.value.username);
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('airportsList');
+  }
+
+  public validateSession(): void {
+    if (this.userSvc.validateSecurityKey()) {
+      this.router.navigateByUrl('airportsList');
+    }
   }
 
 }

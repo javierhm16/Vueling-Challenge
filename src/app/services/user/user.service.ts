@@ -8,11 +8,11 @@ export class UserService {
 
   constructor(private router: Router) { }
 
-  public saveSecurityKey(securityKey: string): void {
+  private saveSecurityKey(securityKey: string): void {
     localStorage.setItem('securityKey', securityKey);
   }
 
-  public saveUsername(username: string): void {
+  private saveUsername(username: string): void {
     localStorage.setItem('username', username);
   }
 

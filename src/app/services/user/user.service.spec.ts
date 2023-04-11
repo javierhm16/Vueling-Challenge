@@ -18,13 +18,9 @@ describe('UserService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should save the security key in localStorage', () => {
-        service.saveSecurityKey('1234567890');
+    it('should save the security key and username in localStorage', () => {
+        service.login('test');
         expect(localStorage.getItem('securityKey')).toEqual('1234567890');
-    });
-
-    it('should save the username in localStorage', () => {
-        service.saveUsername('test');
         expect(localStorage.getItem('username')).toEqual('test');
     });
 

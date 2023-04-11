@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/airportsList',
+    redirectTo: 'login',
     pathMatch: 'full'
   }
 ];

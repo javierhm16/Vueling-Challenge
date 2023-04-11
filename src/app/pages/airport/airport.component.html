@@ -6,20 +6,22 @@
             <mat-icon>keyboard_arrow_left</mat-icon> Back
         </button>
     </div>
-    
+
     <div class="container">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>{{airport.name}}</mat-card-title>
-                <mat-card-subtitle>{{airport.key}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <img [src]="airport.image" alt="Airport Image">
-                <p><strong>City:</strong> {{airport.city}}</p>
-                <p><strong>Country:</strong> {{airport.country}}</p>
-                <p><strong>Owner:</strong> {{airport.owner}}</p>
-                <p><strong>Build:</strong> {{airport.build}}</p>
-            </mat-card-content>
-        </mat-card>
+        <div class="card" [style.backgroundImage]="'url('+airport.image+')'">
+            <div class="content">
+                <mat-card-header>
+                    <mat-card-title>{{airport.name}}</mat-card-title>
+                    <mat-card-subtitle>{{airport.key}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <!-- <img [src]="airport.image" alt="Airport Image"> -->
+                    <p><strong>City:</strong> {{airport.city}}</p>
+                    <p><strong>Country:</strong> {{airport.country}}</p>
+                    <p><strong>Owner:</strong> {{airport.owner}}</p>
+                    <p><strong>Build:</strong> {{airport.build}}</p>
+                </mat-card-content>
+            </div>
+        </div>
     </div>
 </div>

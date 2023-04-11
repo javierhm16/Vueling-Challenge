@@ -19,10 +19,12 @@ export class AirportComponent implements OnInit {
     this.goBack();
   }
 
+  // Get airport
   public getAirport(): void {
     this.airport = this.store.selectSnapshot(state => state.airport.listAirport);
   }
 
+  // Return to airports list
   public goBack(): void {
     if (!this.airport) {
       this.router.navigateByUrl('airportsList');

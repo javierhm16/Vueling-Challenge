@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   public username: string = '';
 
+  // Login form
   public loginForm: FormGroup = this.fb.group({
     username: ['', [Validators.required]],
     password: ['', Validators.required]
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     this.validateSession();
   }
 
+  // Login function
   public login(): void {
     if (this.loginForm.invalid) {
       return;
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('airportsList');
   }
 
+  // Validate session
   public validateSession(): void {
     if (this.userSvc.validateSecurityKey()) {
       this.router.navigateByUrl('airportsList');

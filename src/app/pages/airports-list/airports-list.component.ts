@@ -25,12 +25,14 @@ export class AirportsListComponent implements OnInit {
         this.getAllAirports();
     }
 
+    // Get airport by key, save it in the store and redirect to airport page
     public async clickAirport(key: string): Promise<void> {
         this.airport = await this.airportsListService.getAirport(key);
         this.store.dispatch(new AddAirport(this.airport));
         this.router.navigateByUrl('airport');
     }
 
+    // Get all airports
     public getAllAirports(): void {
         this.airportsListService.getAllAirports().then((res) => {
             this.airportsList = res;

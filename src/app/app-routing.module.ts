@@ -13,6 +13,8 @@ const routes: Routes = [
     redirectTo: 'airportsList',
     pathMatch: 'full'
   },
+  
+  // Pages routes
   {
     path: 'airportsList',
     component: HomeComponent,
@@ -25,10 +27,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     canLoad: [AuthGuard]
   },
+
+  // Auth routes
   {
     path: 'login',
     component: LoginComponent
   },
+  
   {
     path: '**',
     redirectTo: 'login',

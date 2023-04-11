@@ -8,8 +8,11 @@ import { environment } from 'src/environments/environment';
 export class AirportsListService {
 
     private url: string = environment.apiUrl;
+
+    // Paths
     private pathAllAirports: string = '/allAirports';
     private pathAirport: string = '/airport';
+    // Paths
 
     constructor(private http: HttpClient) {
     }
